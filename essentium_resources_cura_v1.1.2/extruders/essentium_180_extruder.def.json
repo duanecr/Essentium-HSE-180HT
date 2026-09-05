@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "name": "Tool 0",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "essentium_HSE180HT",
+        "manufacturer": "Essentium Inc.",
+        "position": "0"
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "Tool 0" },
+        "extruder_nr": { "default_value": 0, "maximum_value": 1 },
+        "material_diameter": { "default_value": 1.75 },
+
+        "machine_nozzle_offset_x": { "default_value": -38 },
+        "machine_nozzle_offset_y": { "default_value": 0 }
+    }
+}

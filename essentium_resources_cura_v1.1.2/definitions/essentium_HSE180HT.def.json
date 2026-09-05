@@ -1,0 +1,73 @@
+{
+    "version": 2,
+    "name": "Essentium HSE 180HT",
+    "inherits": "essentium",
+    "metadata": {
+        "author": "Essentium",
+        "manufacturer": "Essentium Inc.",
+        "visible": true,
+        "quality_definition": "essentium_HSE180HT",
+        "preferred_quality_type": "q035_180",
+        "machine_extruder_trains":
+        {
+            "0": "essentium_180_extruder"
+        },
+
+        "platform": "essentium_180_platform.stl",
+        "platform_offset": [ 0, -165, -60],
+        "exclude_materials": [
+            "essentium_b20_175",
+            "essentium_s10_175"
+        ]
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "Essentium HSE 180HT" },
+        "machine_width": { "default_value": 692 },
+        "machine_depth": { "default_value": 500 },
+        "machine_height": { "default_value": 600 },
+        "gantry_height": { "value": 25 },
+
+        "machine_extruder_count": 						{ "default_value": 1 },
+
+        "machine_start_gcode": {
+            "default_value": ";Starting Custom Script\n;\nTransMode15 ;Config header\nTransAccel2000 ;Config header\nTransParam135 ;Config header\nG90 ;Absolute coordinates\nM83 ;Extruder Relative\nG92 E0 ;Reset extruder\nG28 X0 Y0 ;Home X and Y\nM140 S{material_bed_temperature}; Set Bed Temperature\nM141 S{build_volume_temperature}; Set IR1-Bed\nM142 S{build_volume_temperature}; Set IR2-Wall\nG1 Z25 F900 ;Movement in Z\nG1 Z20 F300 ;Slow movement Z\nM190 S{material_bed_temperature_layer_0}; Wait for Bed Temp to stabilize\nM109 S{material_print_temperature_layer_0} T0; Wait until hozzle is at temp\nG1 E-5.00  F300 ;Retract\nM104 S{material_print_temperature} T0 ;Printing temperature\nG1 X90 Y50 F6000 ;Move lateral to enter the bed\n;\n;End Custom Script\n"
+        },
+        "machine_end_gcode": {
+            "default_value": ";Ending Custom Script\n;\nM255 S0 ;Flash Fuse off\nG91 ;Relative coordinates\nM83 ;Extruder Relative\nG1 Z5 F600 ;From last Z position move the bed down\nG90 ;going back to absolute coordinates\nG1 X1 Y1 F30000 ;Move off bed to purge\nM106 S0 ;part blower fan\nM104 S{material_print_temperature_layer_0} T0 ;Set low hozzle temp\nG1 E75 F250 ;Purge\nG1 E-5.00 F300 ;Retract\nM104 S0 T0 ;Turn off hozzle\n;\n;End Custom Script\n"
+        },
+        
+        "relative_extrusion": {"value": true},
+        
+        "machine_heated_build_volume": { "default_value": true },
+        
+        "build_volume_temperature": {
+            "default_value": 20,
+            "minimum_value": "-273.15",
+            "minimum_value_warning": "0",
+            "maximum_value_warning": "180",
+            "maximum_value": "200"
+        },
+        "material_print_temperature": {
+            "default_value": 220,
+            "minimum_value": "-273.15",
+            "minimum_value_warning": "0",
+            "maximum_value_warning": "480",
+            "maximum_value": "595"
+        },
+        "material_bed_temperature": {
+            "default_value": 60,
+            "minimum_value": "-273.15",
+            "minimum_value_warning": "0",
+            "maximum_value_warning": "190",
+            "maximum_value": "200"
+        },
+
+        "support_enable":                               {"value": true},
+
+        "machine_max_feedrate_x": { "value": 800 },
+        "machine_max_feedrate_y": { "value": 800 },
+        "machine_max_feedrate_z": { "value": 30 },
+        "machine_max_feedrate_e": { "value": 100 }
+    }
+}

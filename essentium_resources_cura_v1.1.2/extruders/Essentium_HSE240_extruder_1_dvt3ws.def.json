@@ -1,0 +1,29 @@
+{
+    "version": 2,
+    "name": "Tool 1",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "essentium_HSE240HT_dvt3ws",
+        "position": "1",
+        "preferred_material": "essentium_vxl_90_175",
+        "variants_name": "Hotend",
+        "preferred_variant_name": "GenV 0.4mm"
+    },
+
+    "overrides": {
+        "machine_nozzle_size": { "default_value": 0.4 },
+        "material_diameter": { "default_value": 1.75 },
+        "machine_extruder_start_code": {"default_value": 
+				";;;;;;;;;;;;;;V-BLADE\n;TOOL PRE-SCRIPT Tool 1 Start\nT1\nM83; Extuder Relative\nM900 K{material_linear_advance_factor}; K comp\nM420 L1 ; Topo comp enable for new head\nM109 S{material_print_temperature} T1; T1 to Temp\nM106 S{cool_fan_speed}; Fan On\nM83; Extuder Relative\n;TOOL PRE-SCRIPT Tool 1 End\n;;;;;;;;;;;;;;"
+            },
+		"machine_extruder_end_code": {"default_value": 
+				";;;;;;;;;;;;;;\n;TOOL POST-SCRIPT Tool 1 Start\nM83; Extuder Relative\nM104 S{material_standby_temperature} T1; Setting idle temp\nG27 P0 S0 T1; Park to avoid blade\nG27 P0 S1 T1; Park position to purge\nM106 S0 ; Purging Fan Speed\nG4 S{mold_width}; Wait before purge to allow fan to stop\nG1 E{material_flush_purge_length} F{material_flush_purge_speed} ; Purge T1\nM106 S{material_surface_energy} ; Purging Cooling Fan Speed\n; 'material_surface_energy' variable is being used as a stand-in variable for fan speed while cooling purge\nG1 E-5 F1800 ; Retract to help ooze from swap\nG4 S{mold_angle}; Wait before wiping for nozzle to cool and have less ooze after wipe\nG12 T1; Wiping idle purge\nM106 S0\nG27 S0 T1; Park to avoid blade\nG27 S1 T1; Park position to purge\nM83; Extuder Relative\n;TOOL POST-SCRIPT Tool 1 End\n;;;;;;;;;;;;;;"
+            },	
+		"extruder_nr": {"default_value": 1},
+        "machine_extruder_cooling_fan_number":{"default_value": 1},
+		
+		"machine_nozzle_offset_x": { "default_value": -60 },
+        "machine_nozzle_offset_y": { "default_value": -10 }
+
+}
+}

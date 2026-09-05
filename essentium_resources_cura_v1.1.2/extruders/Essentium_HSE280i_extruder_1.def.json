@@ -1,0 +1,32 @@
+{
+    "version": 2,
+    "name": "Tool 1",
+    "inherits": "fdmextruder",
+    "metadata": {
+        "machine": "essentium_HSE280i",
+        "manufacturer": "Essentium Inc.",  
+        "position": "1",
+        "preferred_material": "essentium_vxl_90_175",
+        "variants_name": "Hotend",
+        "preferred_variant_name": "GenV 0.4mm"
+    },
+
+    "overrides": {
+        "machine_name": { "default_value": "Tool 1" },       
+        "extruder_nr": {"default_value": 1},
+        "material_diameter": { "default_value": 1.75 },
+
+		"machine_extruder_start_code": {
+            "default_value": ";;;;;;;;;;;;;;\n;Tool 1 Custom Start Script\nT1\nM255 S0 ; Flashfuse off\nM83 ; Ext Rel\nM900 K{material_linear_advance_factor} ; K comp\nM106 S{cool_fan_speed};Part fan on\nM109 S{material_print_temperature} T1; T1 to Temp\nG12 T1 ; Wiping idle purge\nG27 S0 T1\nG27 S1 T1\nM420 L1 ; Topo comp enable for new head\nG1 E5 F300 ; Purge T1\nM104 S{material_print_temperature} T1; T1 to Temp\nM106 S{cool_fan_speed} ; Fan On\nG12 T1; Wiping\nM83 ; Ext Rel\n;;;;;;;;;;;;;;"
+			},
+		"machine_extruder_end_code": {
+            "default_value": ";;;;;;;;;;;;;;\n;Tool 1 Custom End Script\nM255 S0 ; Flashfuse off\nM83 ; Ext Rel\nG1 E-5.0000 F1800 ; Retract\nM104 S{material_standby_temperature} T1; Setting idle temp\nG27 S0 T1\nG27 S1 T1\nM106 S{material_surface_energy} ; Purging Fan Speed\n; 'material_surface_energy' variable is being used as a stand-in variable for fan speed while purging\nG1 E{material_flush_purge_length} S F{material_flush_purge_speed} ; Idle Extrusion T1\n;;;;;;;;;;;;;;"
+			},
+
+
+		
+        "machine_nozzle_offset_x": { "default_value": 156 },
+        "machine_nozzle_offset_y": { "default_value": 0 }
+
+}
+}

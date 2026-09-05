@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<fdmmaterial xmlns="http://www.ultimaker.com/material" xmlns:cura="http://www.ultimaker.com/cura" version="1.3">
+    <metadata>
+        <name>
+            <brand>Essentium</brand>
+            <material>Fiber Reinforced</material>
+            <color>Black</color>
+            <label>PETCF</label>
+        </name>
+        <color_code>#469990</color_code>
+        <GUID>3bacaf4b-ff96-4781-8988-57440a79cce7</GUID>
+        <version>27</version>
+        <description>Essentium PET-CF is a 15% carbon fiber reinforced polyester filament made with Luvocom® 3F resin from Lehvoss. Polyethylene terephthalate (PET) is a semicrystalline polyester commonly used in soda bottles and automotive parts when reinforced with a fiber-filler. This material is one of the easiest filaments in our portfolio to print and has an outstanding price-to-performance ratio. PET-CF has a good balance of stiffness and strength, and when annealed it has temperature resistance of over 155 ̊C, and good chemical resistance for common solvents. v1.1.0</description>
+        <adhesion_info>We recommend Essentium Standard Bed Adhesive - Powered by Magigoo</adhesion_info>
+    </metadata>
+    <properties>
+        <diameter>1.75</diameter>
+        <density>1.4</density>
+    </properties>
+    <settings>
+        <machine>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium_HSE180HT"/>
+            <setting key="standby temperature">150</setting>
+            <setting key="heated bed temperature">80</setting>
+            <setting key="build volume temperature">0</setting>
+            <hotend id="GenV 0.4mm">
+                <!--Core settings-->  
+                <setting key="print temperature">345</setting>
+                <cura:setting key="material_flow">99</cura:setting>
+                <cura:setting key="material_linear_advance_enable">True</cura:setting>
+                <cura:setting key="material_linear_advance_factor">0.025</cura:setting>   
+                <cura:setting key="cool_fan_enabled">True</cura:setting>
+                <setting key="print cooling">30</setting>
+                <cura:setting key="line_width">0.48</cura:setting>
+                <cura:setting key="cool_fan_speed_max">70</cura:setting>
+                <cura:setting key="cool_min_layer_time_fan_speed_max">15</cura:setting> 
+                <cura:setting key="infill_overlap">1</cura:setting> 
+                <!--Ooze control settings-->  
+                <cura:setting key="retraction_enable">False</cura:setting> 
+                <setting key="retraction speed">45</setting>
+                <setting key="retraction amount">0.25</setting>
+                <cura:setting key="retraction_extra_prime_amount">0.03</cura:setting>
+                <cura:setting key="wall_0_wipe_dist">3</cura:setting>
+                <cura:setting key="coasting_enable">False</cura:setting>
+                <cura:setting key="coasting_speed">100</cura:setting>       
+                <cura:setting key="coasting_volume">0.06</cura:setting>
+            </hotend>
+            <hotend id="GenV 0.8mm">
+                <!--Core settings-->  
+                <setting key="print temperature">295</setting>
+                <cura:setting key="material_flow">99</cura:setting>
+                <cura:setting key="material_linear_advance_enable">True</cura:setting>
+                <cura:setting key="material_linear_advance_factor">0.028</cura:setting>   
+                <cura:setting key="cool_fan_enabled">True</cura:setting>
+                <setting key="print cooling">30</setting> 
+                <cura:setting key="line_width">0.96</cura:setting>
+                <cura:setting key="cool_fan_speed_max">70</cura:setting>
+                <cura:setting key="cool_min_layer_time_fan_speed_max">15</cura:setting> 
+                <cura:setting key="infill_overlap">1</cura:setting> 
+                <!--Ooze control settings-->  
+                <cura:setting key="retraction_enable">True</cura:setting> 
+                <setting key="retraction speed">45</setting>
+                <setting key="retraction amount">1.25</setting>
+                <cura:setting key="retraction_extra_prime_amount">0</cura:setting>
+                <cura:setting key="wall_0_wipe_dist">0</cura:setting>
+                <cura:setting key="coasting_enable">True</cura:setting>
+                <cura:setting key="coasting_speed">100</cura:setting>       
+                <cura:setting key="coasting_volume">0.07</cura:setting>
+            </hotend>
+        </machine>
+        <machine>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium"/>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium_HSE280i"/>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium_HSE240HT"/>
+            <setting key="standby temperature">150</setting>
+            <setting key="heated bed temperature">90</setting>
+            <setting key="build volume temperature">50</setting>
+            <hotend id="GenV 0.4mm">
+                <!--Core settings-->  
+                <setting key="print temperature">330</setting>
+                <cura:setting key="material_flow">95</cura:setting>
+                <cura:setting key="material_linear_advance_enable">True</cura:setting>
+                <cura:setting key="material_linear_advance_factor">0.03</cura:setting>   
+                <cura:setting key="cool_fan_enabled">False</cura:setting>
+                <setting key="print cooling">30</setting>
+                <cura:setting key="line_width">0.48</cura:setting>
+                <cura:setting key="cool_fan_speed_max">70</cura:setting>
+                <cura:setting key="cool_min_layer_time_fan_speed_max">15</cura:setting> 
+                <cura:setting key="infill_overlap">1</cura:setting> 
+                <!--Ooze control settings-->  
+                <cura:setting key="retraction_enable">True</cura:setting> 
+                <setting key="retraction speed">45</setting>
+                <setting key="retraction amount">0.25</setting>
+                <cura:setting key="retraction_extra_prime_amount">0.03</cura:setting>
+                <cura:setting key="wall_0_wipe_dist">3</cura:setting>
+                <cura:setting key="coasting_enable">True</cura:setting>
+                <cura:setting key="coasting_speed">100</cura:setting>       
+                <cura:setting key="coasting_volume">0.06</cura:setting>
+            </hotend>
+            <hotend id="GenV 0.8mm">
+                <!--Core settings-->  
+                <setting key="print temperature">340</setting>
+                <cura:setting key="material_flow">95</cura:setting>
+                <cura:setting key="material_linear_advance_enable">True</cura:setting>
+                <cura:setting key="material_linear_advance_factor">0.01</cura:setting>   
+                <cura:setting key="cool_fan_enabled">True</cura:setting>
+                <setting key="print cooling">30</setting> 
+                <cura:setting key="line_width">0.96</cura:setting>
+                <cura:setting key="cool_fan_speed_max">70</cura:setting>
+                <cura:setting key="cool_min_layer_time_fan_speed_max">15</cura:setting> 
+                <cura:setting key="infill_overlap">1</cura:setting> 
+                <!--Ooze control settings-->  
+                <cura:setting key="retraction_enable">True</cura:setting> 
+                <setting key="retraction speed">45</setting>
+                <setting key="retraction amount">1.5</setting>
+                <cura:setting key="retraction_extra_prime_amount">0.034</cura:setting>
+                <cura:setting key="wall_0_wipe_dist">5</cura:setting>
+                <cura:setting key="coasting_enable">True</cura:setting>
+                <cura:setting key="coasting_speed">100</cura:setting>       
+                <cura:setting key="coasting_volume">0.336</cura:setting>
+            </hotend>
+        </machine>
+        <machine>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium_HSE240HT_dvt3ws"/>
+            <machine_identifier manufacturer="Essentium Inc." product="essentium_HSE280i_dvt3ws"/>
+            <hotend id="GenV 0.4mm">
+                <cura:setting key="material_flush_purge_length">50</cura:setting>       
+                <cura:setting key="material_flush_purge_speed">180</cura:setting>
+                <cura:setting key="material_surface_energy">0</cura:setting>
+            </hotend>
+            <hotend id="GenV 0.8mm">
+                <cura:setting key="material_flush_purge_length">50</cura:setting>       
+                <cura:setting key="material_flush_purge_speed">180</cura:setting>
+                <cura:setting key="material_surface_energy">0</cura:setting>
+            </hotend>
+        </machine>
+    </settings>
+</fdmmaterial>
